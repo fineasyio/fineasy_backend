@@ -13,8 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      run: |
-        git fetch --prune --unshallow
 
     - name: Set up Python Environment
       uses: actions/setup-python@v2
