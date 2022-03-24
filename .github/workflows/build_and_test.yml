@@ -3,8 +3,6 @@ name: Build and Test
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   test:
@@ -28,6 +26,6 @@ jobs:
 
     - name: Run Tests
       run: |
-        export PYTHONPATH=src
-        python -m pip install pytest pytest-cov
-        pytest --cov=api tests/unit --cov-report=xml:coverageResultPath --junitxml=unitTestResultPath
+        export PYTHONPATH=api
+        python -m pip install pytest
+        python -m pytest -vv
