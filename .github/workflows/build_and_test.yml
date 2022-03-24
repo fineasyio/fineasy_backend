@@ -26,6 +26,5 @@ jobs:
 
     - name: Run Tests
       run: |
-        export PYTHONPATH=api
         python -m pip install pytest
         python -m pytest -vv
