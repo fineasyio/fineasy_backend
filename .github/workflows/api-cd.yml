@@ -29,16 +29,10 @@ jobs:
   deploy:
     needs: [test]
     runs-on: ubuntu-latest
-
+    environment: HEROKU_DEPLOY
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Approve deploy
-        run: |
-          echo "${{ secrets.HEROKU_DEPLOY.HEROKU_API_KEY }}"
-          echo "${{ secrets.HEROKU_DEPLOY.HEROKU_APP_NAME }}"
-          echo "${{ secrets.HEROKU_DEPLOY.HEROKU_EMAIL }}"
 
       - name: Deploying to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
