@@ -29,7 +29,7 @@ jobs:
   deploy:
     needs: [test]
     runs-on: ubuntu-latest
-    environment: HEROKU_DEPLOY
+    environment: fineasy-backend
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
