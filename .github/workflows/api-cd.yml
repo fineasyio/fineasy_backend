@@ -36,9 +36,9 @@ jobs:
 
       - name: Approve deploy
         run: |
-          echo "${{ secrets.HEROKU_API_KEY }}"
-          echo "${{ secrets.HEROKU_APP_NAME }}"
-          echo "${{ secrets.HEROKU_EMAIL }}"
+          echo "${{ secrets.HEROKU_DEPLOY.HEROKU_API_KEY }}"
+          echo "${{ secrets.HEROKU_DEPLOY.HEROKU_APP_NAME }}"
+          echo "${{ secrets.HEROKU_DEPLOY.HEROKU_EMAIL }}"
 
       - name: Deploying to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
